@@ -10,15 +10,20 @@ intersection_x, intersection_y = 13.25, 12.04
 fig, ax = plt.subplots()
 
 # Plotting the points
-ax.plot(5, 6, 'bo', label='person2')
-ax.annotate('Лице 2', xy=(5, 6), xytext=(5, 8), color='blue', 
-            arrowprops=dict(facecolor='black', shrink=0.2, width=1, headwidth=5, headlength=5))
+ax.plot(5, 6, 'ro', label='person2')
+ax.annotate('Лице 2 (5, 6)', xy=(5, 6), xytext=(5, 8), color='red', 
+            arrowprops=dict(facecolor='red', edgecolor='red', shrink=0.2, width=1, headwidth=5, headlength=5))
+
+# # Set the axes color
+# ax.tick_params(axis='x', colors='red')
+# ax.tick_params(axis='y', colors='red')
+
 
 # ranges for WOMEN
-# ax.set_xlim(8.18, 18.32)
-# ax.set_ylim(7.63, 16.45)
-ax.set_xlim(4, 18.32)
-ax.set_ylim(5, 16.45)
+OFFSET_X=4
+OFFSET_Y=4
+ax.set_xlim(8.18-OFFSET_X, 18.32+OFFSET_X)
+ax.set_ylim(7.63-OFFSET_Y, 16.45+OFFSET_Y)
 
 # Moving the spines
 ax.spines['left'].set_position(('data', intersection_x))
@@ -34,14 +39,14 @@ ax.yaxis.set_ticks_position('left')
 
 plt.xlabel('Невротизъм', loc='right', fontsize=8)
 plt.ylabel('Екстраветрност', loc='top', fontsize=8)
-plt.title('EPQ – Ayzenk (Bulgarian WOMEN)')
-x_offset=3
-plt.text(5+x_offset,16,'Сангвиник', fontsize=14)
-plt.text(13+x_offset,16,'Холерик', fontsize=14)
-plt.text(5+x_offset,8, 'Флегматик', fontsize=14)
-plt.text(13+x_offset,8, 'Меланхолик', fontsize=14)
+plt.title('EPQ – Айзенк (България ЖЕНИ)\n', color='red')
+x_offset=0
+plt.text(5+x_offset,19,'Сангвиник', fontsize=14)
+plt.text(16+x_offset,19,'Холерик', fontsize=14)
+plt.text(5+x_offset,4, 'Флегматик', fontsize=14)
+plt.text(16+x_offset,4, 'Меланхолик', fontsize=14)
 # plt.show()
 
-plt.savefig('/home/akafazov/temp/aysenc/chart-women.png')
+plt.savefig('chart-women.png')
 
 
