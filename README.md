@@ -15,5 +15,9 @@ pip install -r requirements.txt
 # Стартиране на скрипта
 python ./aysenc-men.py
 python ./aysenc-women.py
-
 ```
+
+# Генерирани графики:
+![](./chart-men.png)
+
+![](./chart-women.png)
